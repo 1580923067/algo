@@ -2,7 +2,7 @@ package leetcode.LinkedList;
 
 import leetcode.Structure.ListNode;
 
-public class problem082_删除排序链表中的重复元素2 {
+public class problem082_删除排序链表中的重复元素Ⅱ {
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null) return head;
         if (head.val == head.next.val) {
