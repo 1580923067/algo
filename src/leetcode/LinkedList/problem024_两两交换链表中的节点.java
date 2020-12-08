@@ -3,37 +3,33 @@ package leetcode.LinkedList;
 import leetcode.Structure.ListNode;
 
 public class problem024_两两交换链表中的节点 {
-
-
-    public static class problem206_反转链表 {
-        /**
-         * 迭代
-         */
-        public ListNode reverseList(ListNode head) {
-            ListNode prev = null;
-            ListNode curr = head;
-            while (curr != null) {
-                ListNode nextTemp = curr.next;
-                curr.next = prev;
-                prev = curr;
-                curr = nextTemp;
-            }
-            return prev;
+    //    递归
+    public ListNode swapPairs(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
         }
-
-        /**
-         * 递归
-         * @param head
-         * @return
-         */
-        public ListNode reverseList2(ListNode head) {
-            if (head==null||head.next==null){
-                return head;
-            }
-            ListNode p=reverseList2(head.next);
-            head.next.next=head;
-            head.next=null;
-            return p;
-        }
+        ListNode newHead = head.next;
+        head.next = swapPairs(newHead.next);
+        newHead.next = head;
+        return newHead;
     }
+
+    /**
+     * 迭代
+     */
+    public ListNode swapPairs2(ListNode head) {
+        ListNode dummyHead = new ListNode(0);
+        dummyHead.next = head;
+        ListNode temp = dummyHead;
+        while (temp.next != null || temp.next.next != null) {
+            ListNode node1 = temp.next;
+            ListNode node2 = temp.next.next;
+            temp.next = node2;
+            node1.next = node2.next;
+            node2.next = node1;
+            temp = node1;
+        }
+        return dummyHead.next;
+    }
+
 }
