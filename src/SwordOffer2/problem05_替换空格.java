@@ -1,9 +1,9 @@
 /**
  * 将空格替换为%20
  */
-package SwordOffer2.array;
+package SwordOffer2;
 
-public class problem05 {
+public class problem05_替换空格 {
     public String replaceSpace(String s) {
         int length = s.length();
         char[] array = new char[length * 3];

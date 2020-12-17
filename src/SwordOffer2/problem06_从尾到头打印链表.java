@@ -8,7 +8,7 @@ import leetcode.Structure.ListNode;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class problem06 {
+public class problem06_从尾到头打印链表 {
     public int[] reversePrint(ListNode head) {
         Stack<ListNode> stack = new Stack<>();
         ListNode temp = head;

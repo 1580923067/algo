@@ -3,9 +3,9 @@
  * 1、从数组的右上角开始，如果等于目标值则返回；如果大于目标值，则向左移动一列；
  * 如果小于目标值，则向下移动一行；
  */
-package SwordOffer2.array;
+package SwordOffer2;
 
-public class problem04 {
+public class problem04_二维数组中的查找 {
     public boolean findNumberIn2DArray(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;
