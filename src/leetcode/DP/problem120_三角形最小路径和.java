@@ -1,5 +1,7 @@
 package leetcode.DP;
 
+import leetcode.Structure.TreeNode;
+
 import java.util.List;
 
 public class problem120_三角形最小路径和 {
@@ -24,4 +26,5 @@ public class problem120_三角形最小路径和 {
         }
         return dp[0][0];
     }
+
 }
