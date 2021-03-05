@@ -4,21 +4,34 @@
 package SwordOffer2;
 
 public class problem05_替换空格 {
-    public String replaceSpace(String s) {
-        int length = s.length();
-        char[] array = new char[length * 3];
-        int size = 0;
-        for (int i = 0; i < length; i++) {
-            char c = s.charAt(i);
-            if (c == ' ') {
-                array[size++] = '%';
-                array[size++] = '2';
-                array[size++] = '0';
+    public String replaceSpace(StringBuffer str) {
+        //input check
+        //null pointer
+        if (str == null) {
+            return null;
+        }
+        //empty str or not exist blank
+        if (str.length() == 0 || str.indexOf(" ") == -1) {
+            return str.toString();
+        }
+
+        char[] source = str.toString().toCharArray();
+        int blankCount = 0;
+        for (int i = 0; i < source.length; i++) {
+            blankCount = (source[i] == ' ') ? blankCount + 1 : blankCount;
+        }
+        char[] dest = new char[source.length + blankCount * 2];
+        for (int i = source.length - 1, j = dest.length - 1; i >= 0 && j >= 0; i--, j--) {
+            if (source[i] == ' ') {
+                dest[j--] = '0';
+                dest[j--] = '2';
+                dest[j] = '%';
+                continue;
             } else {
-                array[size++] = c;
+                dest[j] = source[i];
             }
         }
-        String newStr = new String(array, 0, size);
-        return newStr;
+
+        return new String(dest);
     }
 }

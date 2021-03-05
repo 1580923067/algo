@@ -13,7 +13,7 @@ public class problem011_盛最多水的容器 {
         int l = 0, r = height.length - 1;
         int ans = 0;
         while (l < r) {
-            //盛水量
+            // 盛水量
             int aera = Math.min(height[l], height[r]) * (r - l);
             ans = Math.max(ans, aera);
             // 始终移动最小的一边
