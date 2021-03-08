@@ -34,4 +34,13 @@ public class problem05_替换空格 {
 
         return new String(dest);
     }
+
+    public String replaceSpace2(String str) {
+        StringBuilder res = new StringBuilder();
+        for (Character c : str.toCharArray()) {
+            if (c == ' ') res.append("%20");
+            else res.append(c);
+        }
+        return res.toString();
+    }
 }
