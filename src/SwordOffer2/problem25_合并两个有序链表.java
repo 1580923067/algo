@@ -15,7 +15,7 @@ public class problem25_合并两个有序链表 {
             }
             cur = cur.next;
         }
-        cur.next = l1.next == null ? l2 : l1;
+        cur.next = l1 == null ? l2 : l1;
         return dum.next;
     }
 }
