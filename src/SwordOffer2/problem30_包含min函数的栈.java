@@ -3,10 +3,10 @@ package SwordOffer2;
 import java.util.Stack;
 
 public class problem30_包含min函数的栈 {
-    class MinStack {
+
         Stack<Integer> A, B;
 
-        public MinStack() {
+        public void MinStack() {
             A = new Stack<>();
             B = new Stack<>();
         }
@@ -30,4 +30,3 @@ public class problem30_包含min函数的栈 {
             return B.peek();
         }
     }
-}

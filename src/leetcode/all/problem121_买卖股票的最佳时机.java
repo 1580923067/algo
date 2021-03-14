@@ -1,6 +1,4 @@
-package leetcode.DP;
-
-import leetcode.Structure.TreeNode;
+package leetcode.all;
 
 public class problem121_买卖股票的最佳时机 {
     //    方法1 暴力
