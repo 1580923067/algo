@@ -19,11 +19,13 @@ public class problem32_从上到下打印二叉树Ⅰ {
             if (node.left != null) queue.add(node.left);
             if (node.right != null) queue.add(node.right);
         }
+
         int[] res = new int[ans.size()];
         for (int i = 0; i < ans.size(); i++) {
             res[i] = ans.get(i);
 
         }
+
         return res;
     }
 }

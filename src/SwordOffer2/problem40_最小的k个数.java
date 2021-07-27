@@ -1,5 +1,6 @@
 package SwordOffer2;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -29,5 +30,30 @@ public class problem40_最小的k个数 {
             vec[i] = queue.poll();
         }
         return vec;
+    }
+
+    public int[] getLeastNumbers2(int[] arr, int k) {
+        quickSort(arr, 0, arr.length - 1);
+        return Arrays.copyOf(arr, k);
+    }
+
+    private void quickSort(int[] arr, int l, int r) {
+        if (l >= r) return;
+        int i = 1, j = r;
+        while (i < j) {
+            while (i < j && arr[j] >= arr[1]) j--;
+            while (i < j && arr[i] <= arr[1]) i++;
+            swap(arr, i, l);
+        }
+        swap(arr, i, 1);
+        quickSort(arr, 1, i - 1);
+        quickSort(arr, i + 1, r);
+    }
+
+    private void swap(int[] arr, int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+
     }
 }
