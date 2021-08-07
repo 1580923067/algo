@@ -1,5 +1,8 @@
 package leetcode.all;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class problem200_岛屿数量 {
     // DFS
     public int numIslands(char[][] grid) {
@@ -8,6 +11,7 @@ public class problem200_岛屿数量 {
             for (int j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == '1') {
                     dfs(grid, i, j);
+                    bfs(grid, i, j);
                     count++;
                 }
             }
@@ -25,5 +29,17 @@ public class problem200_岛屿数量 {
         dfs(grid, i, j - 1);
     }
 
-
+    private void bfs(char[][] grid, int i, int j) {
+        Queue<int[]> list = new LinkedList<>();
+        list.add(new int[]{i, j});
+        while (!list.isEmpty()) {
+            if (0 <= i && i < grid.length && 0 <= j && j < grid[0].length && grid[i][j] == '1') {
+                grid[i][j] = '0';
+                list.add(new int[]{i + 1, j});
+                list.add(new int[]{i - 1, j});
+                list.add(new int[]{i, j + 1});
+                list.add(new int[]{i, j - 1});
+            }
+        }
+    }
 }
