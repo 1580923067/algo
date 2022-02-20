@@ -43,7 +43,7 @@ public class problem136_只出现一次的数字 {
     public int singleNumber2(int[] nums) {
         int ans = 0;
         for (int num : nums) {
-            ans^=num;
+            ans ^= num;
         }
         return ans;
     }
