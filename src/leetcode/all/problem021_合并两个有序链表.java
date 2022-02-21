@@ -42,6 +42,7 @@ public class problem021_合并两个有序链表 {
                 prev.next = l2;
                 l2 = l2.next;
             }
+            // 不管哪个节点接在了后面，prev都向后移动一位
             prev = prev.next;
         }
         //合并后，l1或l2还有剩余，直接添加到链表末尾
