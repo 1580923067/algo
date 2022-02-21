@@ -3,9 +3,10 @@ package SwordOffer2;
 import leetcode.Structure.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
-
+// 从上往下打印二叉树的每一个节点，同一层从左往右顺序打印
 public class problem32_从上到下打印二叉树Ⅰ {
     public int[] levelOrder(TreeNode root) {
         if (root == null) return new int[0];
@@ -27,5 +28,16 @@ public class problem32_从上到下打印二叉树Ⅰ {
         }
 
         return res;
+    }
+
+    public static void main(String[] args) {
+        problem32_从上到下打印二叉树Ⅰ solution = new problem32_从上到下打印二叉树Ⅰ();
+        TreeNode head = new TreeNode(3);
+        head.left = new TreeNode(9);
+        head.right = new TreeNode(2);
+        head.right.left = new TreeNode(1);
+        head.right.right = new TreeNode(7);
+        int[] ans = solution.levelOrder(head);
+        System.out.println(Arrays.toString(ans));
     }
 }
