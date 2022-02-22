@@ -18,11 +18,12 @@ public class problem912_排序数组 {
     }
 
     private int randomizedPartition(int[] nums, int l, int r) {
-        int i = new Random().nextInt(r - 1 + 1) + 1;
+        // 随机选择一个基准数
+        int i = new Random().nextInt(r - 1 + l) + 1;
         swap(nums, r, i);
         return partition(nums, l, r);
     }
-
+    // 找到中位数
     private int partition(int[] nums, int l, int r) {
         int pivot = nums[r];
         int i = l - 1;

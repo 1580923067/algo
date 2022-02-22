@@ -27,7 +27,7 @@ public class problem092_翻转链表Ⅱ {
     private boolean stop;
     private ListNode left;
 
-    public ListNode reverseBetween2(ListNode head, int m, int n) {
+    public ListNode reverseBetween1(ListNode head, int m, int n) {
         this.left = head;
         this.stop = false;
         this.recurseAndReverse(head, m, n);
@@ -53,5 +53,24 @@ public class problem092_翻转链表Ⅱ {
 
             this.left = this.left.next;
         }
+    }
+
+    // 一次遍历，穿针引线
+    public ListNode reverseBetween2(ListNode head, int left, int right) {
+        ListNode dummyNode = new ListNode(-1);
+        dummyNode.next = head;
+        ListNode pre = dummyNode;
+        // 反转起始节点的前一个节点
+        for (int i = 0; i < left - 1; i++) {
+            pre = pre.next;
+        }
+        ListNode cur = pre.next;
+        for (int i = 0; i < right - left; i++) {
+            ListNode next = cur.next;
+            cur.next = next.next;
+            next.next = pre.next;
+            pre.next = next;
+        }
+        return dummyNode.next;
     }
 }
