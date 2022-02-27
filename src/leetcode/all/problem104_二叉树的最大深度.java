@@ -22,9 +22,11 @@ public class problem104_二叉树的最大深度 {
             return 0;
         }
         Queue<TreeNode> queue = new LinkedList<>();
+        // 将root节点添加到队列
         queue.offer(root);
         int ans = 0;
         while (!queue.isEmpty()) {
+            // 依次弹出二叉树每一层的节点
             int size = queue.size();
             while (size > 0) {
                 TreeNode node = queue.poll();

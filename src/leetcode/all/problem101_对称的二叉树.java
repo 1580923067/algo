@@ -2,6 +2,9 @@ package leetcode.all;
 
 import leetcode.Structure.TreeNode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class problem101_对称的二叉树 {
     public boolean isSymmetric(TreeNode root) {
         return check(root, root);
@@ -16,4 +19,6 @@ public class problem101_对称的二叉树 {
         }
         return p.val == q.val && check(p.left, q.right) && check(p.right, q.left);
     }
+
+
 }
