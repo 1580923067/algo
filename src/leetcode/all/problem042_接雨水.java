@@ -7,11 +7,11 @@ public class problem042_接雨水 {
         int size = height.length;
         for (int i = 1; i < size - 1; i++) {
             int max_left = 0, max_right = 0;
-            // 遍历找到左侧最大值
+            // 向左遍历找到左侧最大值
             for (int j = i; j >= 0; j--) {
                 max_left = Math.max(max_left, height[j]);
             }
-            // 遍历找到右侧最大值
+            // 向右遍历找到右侧最大值
             for (int j = i; j < size; j++) {
                 max_right = Math.max(max_right, height[j]);
             }

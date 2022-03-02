@@ -15,11 +15,14 @@ public class problem199_二叉树的右视图 {
             return res;
         }
         Queue<TreeNode> queue = new LinkedList<>();
+        // 将节点加入队列
         queue.offer(root);
         while (!queue.isEmpty()) {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
+                // 弹出节点
                 TreeNode node = queue.poll();
+                // 分别加入左子树、右子树
                 if (node.left != null) {
                     queue.offer(node.left);
                 }
@@ -46,6 +49,7 @@ public class problem199_二叉树的右视图 {
         if (root == null) {
             return;
         }
+        // 根节点->右子树->左子树
         if (depth == res.size()) {
             res.add(root.val);
         }

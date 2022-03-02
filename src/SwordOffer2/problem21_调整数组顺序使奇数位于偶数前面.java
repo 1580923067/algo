@@ -18,22 +18,22 @@ public class problem21_调整数组顺序使奇数位于偶数前面 {
     }
 
     // 保持数据的相对位置不变
-    public int[] reOrderArray (int[] array) {
+    public int[] reOrderArray(int[] array) {
         // write code here
-        if(array==null||array.length==0) return array;
-        for(int i=1;i<array.length;i++){
-            for(int j=i;j>=1;j--){
-                if(array[j]%2==1&&array[j-1]%2==0){
-                    swap(array,j,j-1);
+        if (array == null || array.length == 0) return array;
+        for (int i = 1; i < array.length; i++) {
+            for (int j = i; j >= 1; j--) {
+                if (array[j] % 2 == 1 && array[j - 1] % 2 == 0) {
+                    swap(array, j, j - 1);
                 }
             }
         }
         return array;
     }
 
-    public void swap(int[] arr,int i,int j){
-        int tmp=arr[i];
-        arr[i]=arr[j];
-        arr[j]=tmp;
+    public void swap(int[] arr, int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
     }
 }

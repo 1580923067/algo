@@ -1,6 +1,6 @@
 package leetcode.all;
 
-public class problem053_最大子序和 {
+public class problem053_最大子数组和 {
     //    方法1 动态规划
     public int maxSubArray(int[] nums) {
         int pre = 0, maxAns = nums[0];//pre表示f(i-1)

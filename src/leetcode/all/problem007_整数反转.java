@@ -13,4 +13,10 @@ public class problem007_整数反转 {
         }
         return rev;
     }
+
+    public static void main(String[] args) {
+        problem007_整数反转 solution = new problem007_整数反转();
+        int res = solution.reverse(123);
+        System.out.println(res);
+    }
 }
