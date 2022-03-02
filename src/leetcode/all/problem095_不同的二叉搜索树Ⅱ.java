@@ -36,4 +36,13 @@ public class problem095_不同的二叉搜索树Ⅱ {
         }
         return allTrees;
     }
+
+    public static void main(String[] args) {
+        problem095_不同的二叉搜索树Ⅱ solution = new problem095_不同的二叉搜索树Ⅱ();
+        int n = 3;
+        List<TreeNode> res = solution.generateTrees(n);
+        for (TreeNode re : res) {
+            System.out.println(re.val);
+        }
+    }
 }
