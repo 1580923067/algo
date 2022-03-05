@@ -21,6 +21,7 @@ public class problem082_删除排序链表中的重复元素Ⅱ {
         if (head == null || head.next == null) return head;
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
+        // 上面两行，可以写成ListNode dummy = new ListNode(-1, head)
         ListNode a = dummy;
         ListNode b = head;
 
@@ -29,6 +30,7 @@ public class problem082_删除排序链表中的重复元素Ⅱ {
                 a = a.next;
                 b = b.next;
             } else {
+                // a不为null且b不为null且a的值不等于b的值，则b指针后移
                 while (b != null && b.next != null && a.next.val != b.next.val) {
                     b = b.next;
                 }
