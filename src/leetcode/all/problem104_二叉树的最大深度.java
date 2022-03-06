@@ -30,6 +30,7 @@ public class problem104_二叉树的最大深度 {
             int size = queue.size();
             while (size > 0) {
                 TreeNode node = queue.poll();
+                // 加入下一层的节点
                 if (node.left != null) {
                     queue.offer(node.left);
                 }
