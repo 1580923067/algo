@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class problem215_数组中的第K个最大元素 {
     /*
-     * 方法1 排序后去第n-k个元素
+     * 方法1 排序后取第n-k个元素
      * 方法2 减而治之，借助快排思想
      * 方法3 优先队列
      * */
