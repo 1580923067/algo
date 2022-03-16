@@ -37,10 +37,11 @@ public class Problem_02_MinPathSum {
 			arr[i] = arr[i - 1] + (rowmore ? m[0][i] : m[i][0]);
 		}
 		for (int i = 1; i < more; i++) {
+			// 初始化第一行
 			arr[0] = arr[0] + (rowmore ? m[i][0] : m[0][i]);
 			for (int j = 1; j < less; j++) {
-				arr[j] = Math.min(arr[j - 1], arr[j])
-						+ (rowmore ? m[i][j] : m[j][i]);
+				// 从左边或者上边选取最小的路径，加上当前路径的值
+				arr[j] = Math.min(arr[j - 1], arr[j]) + (rowmore ? m[i][j] : m[j][i]);
 			}
 		}
 		return arr[less - 1];
