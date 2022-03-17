@@ -6,6 +6,7 @@ package SwordOffer2;
 import leetcode.Structure.ListNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Stack;
 
 public class problem06_从尾到头打印链表 {
@@ -49,5 +50,12 @@ public class problem06_从尾到头打印链表 {
         tmp.add(head.val);
     }
 
-
+    public static void main(String[] args) {
+        problem06_从尾到头打印链表 solution = new problem06_从尾到头打印链表();
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(3);
+        head.next.next = new ListNode(2);
+        int[] res = solution.reversePrint(head);
+        System.out.println(Arrays.toString(res));
+    }
 }
