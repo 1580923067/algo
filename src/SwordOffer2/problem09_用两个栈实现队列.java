@@ -2,6 +2,7 @@ package SwordOffer2;
 
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Stack;
 
 public class problem09_用两个栈实现队列 {
     class CQueue {
@@ -36,7 +37,6 @@ public class problem09_用两个栈实现队列 {
 
     class CQueue2 {
         LinkedList<Integer> A, B;
-
         public void CQueue() {
             A = new LinkedList<Integer>();
             B = new LinkedList<Integer>();
