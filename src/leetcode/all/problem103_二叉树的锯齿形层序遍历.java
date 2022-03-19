@@ -35,9 +35,21 @@ public class problem103_二叉树的锯齿形层序遍历 {
                     nodeQueue.offer(cueNode.right);
                 }
             }
-            ans.add(new LinkedList<Integer>(levelList));
+            // ans.add(new LinkedList<Integer>(levelList));
+            ans.add((List<Integer>) levelList);
             isOrderLeft = !isOrderLeft;
         }
         return ans;
+    }
+
+    public static void main(String[] args) {
+        problem103_二叉树的锯齿形层序遍历 solution = new problem103_二叉树的锯齿形层序遍历();
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+        List<List<Integer>> res = solution.zigzagLevelOrder(root);
+        System.out.println(res);
     }
 }

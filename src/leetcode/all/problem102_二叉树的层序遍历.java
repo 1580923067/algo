@@ -19,7 +19,7 @@ public class problem102_二叉树的层序遍历 {
         while (!queue.isEmpty()) {
             List<Integer> level = new ArrayList<>();
             int currentLevelSize = queue.size();
-            for (int i = 1; i < currentLevelSize; ++i) {
+            for (int i = 1; i <= currentLevelSize; ++i) {
                 TreeNode node = queue.poll();
                 level.add(node.val);
                 if (node.left != null) {
@@ -32,5 +32,17 @@ public class problem102_二叉树的层序遍历 {
             ret.add(level);
         }
         return ret;
+    }
+
+    public static void main(String[] args) {
+        problem102_二叉树的层序遍历 solution = new problem102_二叉树的层序遍历();
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+        List<List<Integer>> res = solution.levelOrder(root);
+        System.out.println(res);
+
     }
 }
