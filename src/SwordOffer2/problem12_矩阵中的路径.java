@@ -19,8 +19,15 @@ public class problem12_矩阵中的路径 {
         board[i][j] = '\0';
         //匹配上下左右四个方向
         boolean res = dfs(board, word, i + 1, j, k + 1) || dfs(board, word, i - 1, j, k + 1) ||
-                dfs(board, word, i, j + 1, k + 1) || dfs(board, word, i, j - 1, k + 1);
+            dfs(board, word, i, j + 1, k + 1) || dfs(board, word, i, j - 1, k + 1);
         board[i][j] = word[k];
         return res;
+    }
+
+    public static void main(String[] args) {
+        problem12_矩阵中的路径 solution = new problem12_矩阵中的路径();
+        char[][] board = new char[][]{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}};
+        String word = "ABCCED";
+        System.out.println(solution.exist(board, word));
     }
 }
