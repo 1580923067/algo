@@ -21,4 +21,13 @@ public class problem191_为1的个数 {
         }
         return ret;
     }
+
+    public static void main(String[] args) {
+        problem191_为1的个数 solution = new problem191_为1的个数();
+        int n = 00000000000000000000000000001011;
+        int res = solution.hammingWeight(n);
+        int res1 = solution.hammingWeight1(n);
+        System.out.println(res);
+        System.out.println(res1);
+    }
 }
