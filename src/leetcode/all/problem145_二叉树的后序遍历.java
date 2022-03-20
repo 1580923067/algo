@@ -51,4 +51,15 @@ public class problem145_二叉树的后序遍历 {
         }
         return res;
     }
+
+    public static void main(String[] args) {
+        problem145_二叉树的后序遍历 solution = new problem145_二叉树的后序遍历();
+        TreeNode root = new TreeNode(1);
+        root.right = new TreeNode(2);
+        root.right.left = new TreeNode(3);
+        // List<Integer> res = solution.postorderTraversal(root);
+        // System.out.println(res);
+        List<Integer> res1 = solution.postorderTraversal1(root);
+        System.out.println(res1);
+    }
 }
