@@ -26,4 +26,13 @@ public class problem011_盛最多水的容器 {
         }
         return ans;
     }
+
+    public static void main(String[] args) {
+        problem011_盛最多水的容器 solution = new problem011_盛最多水的容器();
+        int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        int res = solution.maxAera(height);
+        System.out.println(res);
+        int res2 = solution.maxAera2(height);
+        System.out.println(res2);
+    }
 }

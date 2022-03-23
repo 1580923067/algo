@@ -106,7 +106,7 @@ class Wrapper {
     }
 }
 
-public class MainClass {
+public class TreeNodeMainClass {
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         String line;
