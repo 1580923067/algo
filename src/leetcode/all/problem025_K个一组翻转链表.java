@@ -3,7 +3,6 @@ package leetcode.all;
 import leetcode.Structure.ListNode;
 
 public class problem025_K个一组翻转链表 {
-    //官方答案。。。
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode hair = new ListNode(0);
         hair.next = head;

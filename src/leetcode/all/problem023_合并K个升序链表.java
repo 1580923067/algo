@@ -2,6 +2,8 @@ package leetcode.all;
 
 import leetcode.Structure.ListNode;
 
+import java.util.PriorityQueue;
+
 public class problem023_合并K个升序链表 {
     /**
      * 方法1 顺序合并
@@ -51,5 +53,42 @@ public class problem023_合并K个升序链表 {
         }
         int mid = (l + r) >> 1;
         return mergeTwoLists(merge(lists, l, mid), merge(lists, mid + 1, r));
+    }
+
+    // 优先队列
+    class Status implements Comparable<Status> {
+        int val;
+        ListNode ptr;
+
+        Status(int val, ListNode ptr) {
+            this.val = val;
+            this.ptr = ptr;
+        }
+
+        @Override
+        public int compareTo(Status status) {
+            return this.val - status.val;
+        }
+    }
+
+    PriorityQueue<Status> queue = new PriorityQueue<>();
+
+    public ListNode mergeKLists3(ListNode[] lists) {
+        for (ListNode node : lists) {
+            if (node != null) {
+                queue.offer(new Status(node.val, node));
+            }
+        }
+        ListNode head = new ListNode(0);
+        ListNode tail = head;
+        while (!queue.isEmpty()) {
+            Status f = queue.poll();
+            tail.next = f.ptr;
+            tail = tail.next;
+            if (f.ptr.next != null) {
+                queue.offer(new Status(f.ptr.next.val, f.ptr.next));
+            }
+        }
+        return head.next;
     }
 }
