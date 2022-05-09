@@ -72,4 +72,10 @@ public class problem032_最长有效括号 {
         }
         return maxlength;
     }
+
+    public static void main(String[] args) {
+        problem032_最长有效括号 problem = new problem032_最长有效括号();
+        String s = "(()";
+        System.out.println(problem.longestValidParentheses2(s));
+    }
 }
