@@ -9,4 +9,9 @@ public class problem344_反转字符串 {
             s[right] = temp;
         }
     }
+
+    public static void main(String[] args) {
+        problem344_反转字符串 solution = new problem344_反转字符串();
+
+    }
 }
